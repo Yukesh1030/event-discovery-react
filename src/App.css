@@ -1,0 +1,51 @@
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.page-container {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 80px;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--text-primary);
+}
+
+.section-description {
+  margin-top: 10px;
+  max-width: 600px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .section {
+    padding-block: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    width: calc(100% - 28px);
+  }
+
+  .section {
+    padding-block: 44px;
+  }
+}

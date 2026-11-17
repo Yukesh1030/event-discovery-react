@@ -1,0 +1,19 @@
+
+.event-details-page {
+  width: min(100% - 32px, 1200px);
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.event-details-page h1 {
+  color: #202124;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.event-details-page p {
+  margin-top: 12px;
+  color: #5f6368;
+  font-size: 16px;
+}
