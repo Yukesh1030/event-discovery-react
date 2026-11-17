@@ -1,12 +1,15 @@
-
 .app {
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-  overflow-x: clip;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-container {
   width: min(100% - 48px, 1200px);
+  max-width: 100%;
   margin-inline: auto;
 }
 
@@ -16,10 +19,11 @@
 
 .section-heading {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(26px, 4vw, 42px);
   font-weight: 800;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
   color: var(--text-primary);
+  overflow-wrap: break-word;
 }
 
 .section-description {
@@ -42,10 +46,10 @@
 
 @media (max-width: 480px) {
   .page-container {
-    width: calc(100% - 28px);
+    width: min(100% - 20px, 1200px);
   }
 
   .section {
-    padding-block: 44px;
+    padding-block: 40px;
   }
 }

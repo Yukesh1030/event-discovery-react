@@ -1,0 +1,35 @@
+# ========================================================
+# STACKLY: Event Discovery & Workshop Registration
+# System & Development Environment Requirements
+# ========================================================
+
+# 1. Node.js Environment (Primary Application Runtime)
+# ----------------------------------------------------
+# Node.js: >= 18.0.0 (Recommended: Node.js 20 LTS or 22 LTS)
+# npm: >= 9.0.0 (or pnpm >= 8.0.0 / yarn >= 1.22.0)
+#
+# Primary Dependencies (Managed via package.json):
+#   - react: ^19.3.1
+#   - react-dom: ^19.3.1
+#   - react-router-dom: ^7.18.5
+#   - motion: ^14.14.0
+#   - lucide-react: ^1.73.0
+#   - vite: ^8.3.6
+#
+# To install and launch the React app on another device:
+#   1. Clone repository:
+#      git clone https://github.com/Yukesh1030/event-discovery-react.git
+#      cd event-discovery-react
+#   2. Install Node dependencies:
+#      npm install
+#   3. Run development server:
+#      npm run dev
+#   4. Build for production:
+#      npm run build
+#      npm run preview
+
+# 2. Python Environment (Asset & WebP Calibration Tools)
+# ------------------------------------------------------
+# Python: >= 3.9
+# Required for running image processing scripts (generate_assets.py)
+Pillow>=10.0.0

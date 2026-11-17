@@ -363,8 +363,12 @@
 }
 
 @media (max-width: 480px) {
+  .registration-modal-backdrop {
+    padding: 10px;
+  }
+
   .registration-modal-card {
-    padding: 22px 18px;
+    padding: 20px 16px;
     border-radius: 16px;
   }
 
@@ -379,5 +383,20 @@
 
   .success-actions {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 320px) {
+  .registration-modal-card {
+    padding: 18px 12px;
+  }
+
+  .input-wrapper input {
+    padding: 10px 10px 10px 36px;
+    font-size: 13px;
+  }
+
+  .input-icon {
+    left: 10px;
   }
 }
