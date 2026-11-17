@@ -1,8 +1,8 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { getRegistrations } from "../utils/storage";
 
 import brandLogo from "../assets/icons/Brand-logo.webp";
 
@@ -10,6 +10,21 @@ import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [registrationCount, setRegistrationCount] = useState(0);
+
+  useEffect(() => {
+    const updateCount = () => {
+      const list = getRegistrations();
+      setRegistrationCount(list.length);
+    };
+
+    updateCount();
+    window.addEventListener("stackly_registrations_updated", updateCount);
+
+    return () => {
+      window.removeEventListener("stackly_registrations_updated", updateCount);
+    };
+  }, []);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -18,13 +33,8 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-container">
-
         {/* Brand Logo */}
-        <NavLink
-          to="/"
-          className="navbar-brand"
-          onClick={closeMenu}
-        >
+        <NavLink to="/" className="navbar-brand" onClick={closeMenu}>
           <img src={brandLogo} alt="STACKLY Logo" />
         </NavLink>
 
@@ -55,7 +65,10 @@ function Navbar() {
               isActive ? "nav-link active" : "nav-link"
             }
           >
-            My Registrations
+            <span>My Registrations</span>
+            {registrationCount > 0 && (
+              <span className="navbar-badge">{registrationCount}</span>
+            )}
           </NavLink>
         </nav>
 
@@ -74,7 +87,6 @@ function Navbar() {
         >
           {menuOpen ? <X size={25} /> : <Menu size={25} />}
         </button>
-
       </div>
 
       {/* Mobile Navigation */}
@@ -95,8 +107,11 @@ function Navbar() {
               Explore Events
             </NavLink>
 
-            <NavLink to="/registrations" onClick={closeMenu}>
-              My Registrations
+            <NavLink to="/registrations" onClick={closeMenu} className="mobile-nav-item-with-badge">
+              <span>My Registrations</span>
+              {registrationCount > 0 && (
+                <span className="navbar-badge">{registrationCount}</span>
+              )}
             </NavLink>
 
             <NavLink

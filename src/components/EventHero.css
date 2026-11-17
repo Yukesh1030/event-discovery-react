@@ -301,7 +301,8 @@
   }
 
   .hero-floating-note {
-    right: -10px;
+    right: 12px;
+    bottom: 20px;
   }
 }
 
@@ -316,8 +317,8 @@
   }
 
   .hero-content h1 {
-    font-size: clamp(42px, 11vw, 58px);
-    letter-spacing: -2.5px;
+    font-size: clamp(38px, 10vw, 54px);
+    letter-spacing: -2px;
   }
 
   .hero-description {
@@ -336,15 +337,15 @@
   }
 
   .hero-art-center {
-    margin-top: 75px;
+    margin-top: 60px;
   }
 
   .hero-art-center h2 {
-    font-size: clamp(48px, 12vw, 66px);
+    font-size: clamp(40px, 11vw, 56px);
   }
 
   .hero-art-shapes {
-    transform: scale(0.7);
+    transform: scale(0.6);
     transform-origin: top right;
   }
 
@@ -356,9 +357,11 @@
   }
 
   .hero-floating-note {
-    right: -5px;
-    bottom: -25px;
-    padding: 11px;
+    position: static;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
   }
 
   .hero-actions {
